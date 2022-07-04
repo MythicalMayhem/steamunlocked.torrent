@@ -7,13 +7,9 @@ import time
 #ACT 1 
 r = requests.get('https://steamunlocked.net/all-games-2/').content.decode("utf-8")
 
-E = open('links.txt','w')
-E.write('')
-E.close()
+
 
 f = open('browse.txt','w+',encoding="utf-8")
-
-
 r = r.split('<li>')
 r.remove(r[0])
 
@@ -34,19 +30,25 @@ for i in range(len(r)):
     f.write(r[i] + '\n')
 f.close()
 
-full = len(open('browse.txt').readlines()) 
-fraction = round(full/100) 
+kk = open('browse.txt','r')
+cnt = 0
+for line in kk:
+    cnt = cnt+1
+fraction = round(cnt/100) 
+kk.close()
+full = cnt
 
 #ACT 2 
-
-E = open('links.txt','a')
 f = open('browse.txt','r')
 c = f.readlines()
+f.close()
+
 
 ind = 0
 
 def conn1():
     global ind
+    E = open('links.txt','w+')
     for i in range(0,1000): 
         c[i] = c[i].split('\n')
         c[i] = c[i][0]
@@ -56,12 +58,15 @@ def conn1():
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
-            E.write(c[i] + '\n')
+            c[i] =c[i] + '\n'
             print(c[i])
+            E.write(c[i])
         ind = ind + 1   
+    E.close()
 
 def conn2():
     global ind
+    E = open('links.txt','w+')
     for i in range(1000,2000): 
         c[i] = c[i].split('\n')
         c[i] = c[i][0]
@@ -71,13 +76,15 @@ def conn2():
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
+            c[i] =c[i] + '\n'
             print(c[i])
-            E.write(c[i] + '\n')
+            E.write(c[i])
         ind = ind + 1  
-
+    E.close()
 
 def conn3():
     global ind
+    E = open('links.txt','w+')
     for i in range(2000,3000): 
         c[i] = c[i].split('\n')
         c[i] = c[i][0]
@@ -88,13 +95,16 @@ def conn3():
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
-            E.write(c[i] + '\n')
+            c[i] =c[i] + '\n'
             print(c[i])
+            E.write(c[i])
         ind = ind + 1  
+    E.close()
 
 
 def conn4():
     global ind
+    E = open('links.txt','w+')
     for i in range(3000,4000): 
         c[i] = c[i].split('\n')
         c[i] = c[i][0]
@@ -105,13 +115,16 @@ def conn4():
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
-            E.write(c[i] + '\n')
+            c[i] =c[i] + '\n'
             print(c[i])
+            E.write(c[i])
         ind = ind + 1  
+    E.close()
 
 
 def conn5():
     global ind
+    E = open('links.txt','w+')
     for i in range(4000,5000): 
         c[i] = c[i].split('\n')
         c[i] = c[i][0]
@@ -122,13 +135,16 @@ def conn5():
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
-            E.write(c[i] + '\n')
+            c[i] =c[i] + '\n'
             print(c[i])
+            E.write(c[i])
         ind = ind + 1  
+    E.close()
 
 
 def conn6():
     global ind
+    E = open('links.txt','w+')
     for i in range(5000,6000): 
         c[i] = c[i].split('\n')
         c[i] = c[i][0]
@@ -139,13 +155,16 @@ def conn6():
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
-            E.write(c[i] + '\n')
+            c[i] =c[i] + '\n'
             print(c[i])
+            E.write(c[i])
         ind = ind + 1  
+    E.close()
 
 
 def conn7():
     global ind
+    E = open('links.txt','w+')
     for i in range(6000,7000): 
         c[i] = c[i].split('\n')
         c[i] = c[i][0]
@@ -156,13 +175,16 @@ def conn7():
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
-            E.write(c[i] + '\n')
+            c[i] =c[i] + '\n'
             print(c[i])
+            E.write(c[i])
         ind = ind + 1  
+    E.close()
 
 
 def conn8():
     global ind
+    E = open('links.txt','w+')
     for i in range(7000,8000): 
         c[i] = c[i].split('\n')
         c[i] = c[i][0]
@@ -173,13 +195,16 @@ def conn8():
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
-            E.write(c[i] + '\n')
+            c[i] =c[i] + '\n'
             print(c[i])
+            E.write(c[i])
         ind = ind + 1  
+    E.close()
 
 
 def conn9():
     global ind
+    E = open('links.txt','w+')
     for i in range(8000,9000): 
         c[i] = c[i].split('\n')
         c[i] = c[i][0]
@@ -190,13 +215,16 @@ def conn9():
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
-            E.write(c[i] + '\n')
+            c[i] =c[i] + '\n'
             print(c[i])
+            E.write(c[i])
         ind = ind + 1  
+    E.close()
 
 
 def conn10():
     global ind
+    E = open('links.txt','w+')
     for i in range(9000,len(open('browse.txt').readlines())): 
         c[i] = c[i].split('\n')
         c[i] = c[i][0]
@@ -207,9 +235,11 @@ def conn10():
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
-            E.write(c[i] + '\n')
+            c[i] =c[i] + '\n'
             print(c[i])
+            E.write(c[i])
         ind = ind + 1  
+    E.close()
 
 
 
@@ -227,6 +257,7 @@ t7 = threading.Thread(target=conn7)
 t8 = threading.Thread(target=conn8)
 t9 = threading.Thread(target=conn9)
 t10 = threading.Thread(target=conn10)
+
 
 t1.start()
 t2.start()
@@ -270,7 +301,6 @@ t9.join()
 t10.join()
 
 f.close()
-E.close()
 #Sorry i could not find how to multi thread while loops xd
 
 
