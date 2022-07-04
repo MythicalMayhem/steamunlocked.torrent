@@ -6,13 +6,15 @@ import time
 
 #ACT 1 
 r = requests.get('https://steamunlocked.net/all-games-2/').content.decode("utf-8")
-
-
-
-f = open('browse.txt','w+',encoding="utf-8")
 r = r.split('<li>')
 r.remove(r[0])
 
+
+c = []
+
+paste = open('pas.txt','w')
+paste.write('')
+paste.close()
 
 for i in range(len(r)):
     r[i] = r[i].split('</li>')
@@ -27,219 +29,144 @@ for i in range(len(r)):
     r[i].remove(r[i][1])
     r[i] = r[i][0]
 
-    f.write(r[i] + '\n')
-f.close()
+    c.append(r[i] + '\n')
 
-kk = open('browse.txt','r')
-cnt = 0
-for line in kk:
-    cnt = cnt+1
-fraction = round(cnt/100) 
-kk.close()
-full = cnt
+
 
 #ACT 2 
-f = open('browse.txt','r')
-c = f.readlines()
-f.close()
-
-
+full = len(c)
+v = []
 ind = 0
 
 def conn1():
     global ind
-    E = open('links.txt','w+')
     for i in range(0,1000): 
-        c[i] = c[i].split('\n')
-        c[i] = c[i][0]
-        R = requests.get(c[i]).content.decode("utf-8")
-        R = R.split('<img')
-        R = R[2] 
+        c[i] = c[i].split('\n')[0]
+        R = requests.get(c[i]).content.decode("utf-8").split('<img')[2] 
         fd = R.count('Torrent') + R.count('torrent')  
-
         if fd >= 1:
-            c[i] =c[i] + '\n'
             print(c[i])
-            E.write(c[i])
+            v.append(str(c[i]))
         ind = ind + 1   
-    E.close()
+
+
 
 def conn2():
     global ind
-    E = open('links.txt','w+')
     for i in range(1000,2000): 
-        c[i] = c[i].split('\n')
-        c[i] = c[i][0]
-        R = requests.get(c[i]).content.decode("utf-8")
-        R = R.split('<img')
-        R = R[2] 
+        c[i] = c[i].split('\n')[0]
+        R = requests.get(c[i]).content.decode("utf-8").split('<img')[2]
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
-            c[i] =c[i] + '\n'
             print(c[i])
-            E.write(c[i])
+            v.append(str(c[i]))
         ind = ind + 1  
-    E.close()
 
 def conn3():
     global ind
-    E = open('links.txt','w+')
     for i in range(2000,3000): 
-        c[i] = c[i].split('\n')
-        c[i] = c[i][0]
-
-        R = requests.get(c[i]).content.decode("utf-8")
-        R = R.split('<img')
-        R = R[2] 
+        c[i] = c[i].split('\n')[0]
+        R = requests.get(c[i]).content.decode("utf-8").split('<img')[2]
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
-            c[i] =c[i] + '\n'
             print(c[i])
-            E.write(c[i])
+            v.append(str(c[i]))
         ind = ind + 1  
-    E.close()
 
 
 def conn4():
     global ind
-    E = open('links.txt','w+')
     for i in range(3000,4000): 
-        c[i] = c[i].split('\n')
-        c[i] = c[i][0]
-
-        R = requests.get(c[i]).content.decode("utf-8")
-        R = R.split('<img')
-        R = R[2] 
+        c[i] = c[i].split('\n')[0]
+        R = requests.get(c[i]).content.decode("utf-8").split('<img')[2]
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
-            c[i] =c[i] + '\n'
             print(c[i])
-            E.write(c[i])
+            v.append(str(c[i]))
         ind = ind + 1  
-    E.close()
 
 
 def conn5():
     global ind
-    E = open('links.txt','w+')
     for i in range(4000,5000): 
-        c[i] = c[i].split('\n')
-        c[i] = c[i][0]
-
-        R = requests.get(c[i]).content.decode("utf-8")
-        R = R.split('<img')
-        R = R[2] 
+        c[i] = c[i].split('\n')[0]
+        R = requests.get(c[i]).content.decode("utf-8").split('<img')[2]
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
-            c[i] =c[i] + '\n'
             print(c[i])
-            E.write(c[i])
+            v.append(str(c[i]))
         ind = ind + 1  
-    E.close()
 
 
 def conn6():
     global ind
-    E = open('links.txt','w+')
     for i in range(5000,6000): 
-        c[i] = c[i].split('\n')
-        c[i] = c[i][0]
-
-        R = requests.get(c[i]).content.decode("utf-8")
-        R = R.split('<img')
-        R = R[2] 
+        c[i] = c[i].split('\n')[0]
+        R = requests.get(c[i]).content.decode("utf-8").split('<img')[2]
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
-            c[i] =c[i] + '\n'
             print(c[i])
-            E.write(c[i])
+            v.append(str(c[i]))
         ind = ind + 1  
-    E.close()
 
 
 def conn7():
     global ind
-    E = open('links.txt','w+')
     for i in range(6000,7000): 
-        c[i] = c[i].split('\n')
-        c[i] = c[i][0]
-
-        R = requests.get(c[i]).content.decode("utf-8")
-        R = R.split('<img')
-        R = R[2] 
+        c[i] = c[i].split('\n')[0]
+        R = requests.get(c[i]).content.decode("utf-8").split('<img')[2]
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
-            c[i] =c[i] + '\n'
             print(c[i])
-            E.write(c[i])
+            v.append(str(c[i]))
         ind = ind + 1  
-    E.close()
 
 
 def conn8():
     global ind
-    E = open('links.txt','w+')
     for i in range(7000,8000): 
-        c[i] = c[i].split('\n')
-        c[i] = c[i][0]
-
-        R = requests.get(c[i]).content.decode("utf-8")
-        R = R.split('<img')
-        R = R[2] 
+        c[i] = c[i].split('\n')[0]
+        R = requests.get(c[i]).content.decode("utf-8").split('<img')[2]
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
-            c[i] =c[i] + '\n'
             print(c[i])
-            E.write(c[i])
+            v.append(str(c[i]))
         ind = ind + 1  
-    E.close()
 
 
 def conn9():
     global ind
-    E = open('links.txt','w+')
     for i in range(8000,9000): 
-        c[i] = c[i].split('\n')
-        c[i] = c[i][0]
-
-        R = requests.get(c[i]).content.decode("utf-8")
-        R = R.split('<img')
-        R = R[2] 
+        c[i] = c[i].split('\n')[0]
+        R = requests.get(c[i]).content.decode("utf-8").split('<img')[2]
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
             c[i] =c[i] + '\n'
             print(c[i])
-            E.write(c[i])
+            v.append(str(c[i]))
         ind = ind + 1  
-    E.close()
 
 
 def conn10():
     global ind
-    E = open('links.txt','w+')
-    for i in range(9000,len(open('browse.txt').readlines())): 
-        c[i] = c[i].split('\n')
-        c[i] = c[i][0]
-
-        R = requests.get(c[i]).content.decode("utf-8")
-        R = R.split('<img')
-        R = R[2] 
+    for i in range(9000,len(c)): 
+        c[i] = c[i].split('\n')[0]
+        R = requests.get(c[i]).content.decode("utf-8").split('<img')[2]
         fd = R.count('Torrent') + R.count('torrent')  
 
         if fd >= 1:
             c[i] =c[i] + '\n'
             print(c[i])
-            E.write(c[i])
+            v.append(str(c[i]))
         ind = ind + 1  
-    E.close()
 
 
 
@@ -273,10 +200,13 @@ t10.start()
 
 
 
-
 while True:
+    paste = open('pas.txt','w')
+    for i in range(len(v)):
+        a = v[i] + '\n'
+        paste.write(a)
+    paste.close()
     p = round((ind*100)/full,1)
-
     o = round(p / 10)
     f = '*' * o * 2
     e = '-' * (10 - o) *2
@@ -301,8 +231,5 @@ t9.join()
 t10.join()
 
 f.close()
-#Sorry i could not find how to multi thread while loops xd
 
-
-
-    
+#Sorry i could not find how to multithread while loops xd
