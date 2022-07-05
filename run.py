@@ -217,6 +217,15 @@ while True:
     time.sleep(2)
 
     if ind == full:
+        paste = open('pas.txt','w')
+        tt = []
+        for line in paste :
+            tt.append(line)
+        tt = set(tt)
+        for i in tt:
+            i = i + '\n'
+            paste.write(i)
+        paste.close()
         break
 
 t1.join()
@@ -229,6 +238,8 @@ t7.join()
 t8.join()
 t9.join()
 t10.join()
+
+
 
 f.close()
 
