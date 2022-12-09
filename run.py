@@ -87,7 +87,7 @@ et = time.time()
 
 
 elapsed_time = et - st
-f.open('output.txt','w+')
+f = open('output.txt','w+')
 for i in Wlinks:
     f.write(f'{i}\n')
 
